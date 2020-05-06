@@ -8,9 +8,10 @@ program main
     use init
     use print_mat
     use matrix_mult
+    use trans
     
     implicit none
-    integer :: x_1 = 2, y_1=2, x_2 = 2, y_2=2, stuff=1
+    integer :: x_1 = 2, y_1=3, x_2 =3, y_2=2, stuff=1
     real, Dimension(:,:), Allocatable :: array, array2, array3, array4
     
     Allocate(array(x_1,y_1))
@@ -19,13 +20,18 @@ program main
     
     array = init_matrix(x_1,y_1)
     stuff = print_matrix(array)
-    
-    array2 = init_matrix(x_2,y_2)
-    stuff = print_matrix(array2)
     print *,""
-    print *," Result of Matrix Multiplication"
-    array3 = multiply(array,array2)
-    stuff = print_matrix(array3)
+    print *,"size(a,1)", size(array,1)
+    print *,"size(a,2)",size(array,2)
+
+    stuff = print_matrix(transpose(array))
+!    
+!    array2 = init_matrix(x_2,y_2)
+!    stuff = print_matrix(array2)
+!    print *,""
+!    print *," Result of Matrix Multiplication"
+!    array3 = multiply(array,array2)
+!    stuff = print_matrix(array3)
     
     
 end program main

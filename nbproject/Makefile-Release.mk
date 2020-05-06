@@ -39,7 +39,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/init.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/matrix_mult.o \
-	${OBJECTDIR}/print_mat.o
+	${OBJECTDIR}/print_mat.o \
+	${OBJECTDIR}/trans.o
 
 
 # C Compiler Flags
@@ -85,6 +86,10 @@ ${OBJECTDIR}/matrix_mult.o: matrix_mult.f90
 ${OBJECTDIR}/print_mat.o: print_mat.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -O2 -o ${OBJECTDIR}/print_mat.o print_mat.f90
+
+${OBJECTDIR}/trans.o: trans.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -O2 -o ${OBJECTDIR}/trans.o trans.f90
 
 # Subprojects
 .build-subprojects:
