@@ -12,6 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>distance.f90</itemPath>
       <itemPath>dot_product.f90</itemPath>
       <itemPath>init.f90</itemPath>
       <itemPath>main.f90</itemPath>
@@ -41,6 +42,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="distance.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="dot_product.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="init.f90" ex="false" tool="2" flavor2="0">
@@ -74,6 +77,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="distance.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="dot_product.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="init.f90" ex="false" tool="2" flavor2="0">

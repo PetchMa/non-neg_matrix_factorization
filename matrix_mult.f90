@@ -35,7 +35,6 @@ contains
             print *, "Array 1 row: ", size(array,1),  "Array 2 col: ",size(array2,2)
             stop
         else
-           
             do n=1, rows
                 do k = 1, cols
                     prod = mult(array(n,:),array2(:,k))
@@ -43,7 +42,6 @@ contains
                 end do
             end do
         end if
-        
     end function multiply
     
 end module matrix_mult

@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/distance.o \
 	${OBJECTDIR}/dot_product.o \
 	${OBJECTDIR}/init.o \
 	${OBJECTDIR}/main.o \
@@ -66,6 +67,10 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/non_neg_mat_fact.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.f} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/non_neg_mat_fact ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/distance.o: distance.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -g -o ${OBJECTDIR}/distance.o distance.f90
 
 ${OBJECTDIR}/dot_product.o: dot_product.f90
 	${MKDIR} -p ${OBJECTDIR}

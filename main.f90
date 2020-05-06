@@ -9,6 +9,7 @@ program main
     use print_mat
     use matrix_mult
     use trans
+    use distance
     
     implicit none
     integer :: x_1 = 2, y_1=3, x_2 =3, y_2=2, stuff=1
@@ -24,14 +25,14 @@ program main
     print *,"size(a,1)", size(array,1)
     print *,"size(a,2)",size(array,2)
 
-    stuff = print_matrix(transpose(array))
-!    
-!    array2 = init_matrix(x_2,y_2)
-!    stuff = print_matrix(array2)
-!    print *,""
+    
+    array2 = init_matrix(x_2,y_2)
+    stuff = print_matrix(array2)
+    print *,""
 !    print *," Result of Matrix Multiplication"
 !    array3 = multiply(array,array2)
 !    stuff = print_matrix(array3)
+    print *," error between ", error(array,array)
     
     
 end program main
