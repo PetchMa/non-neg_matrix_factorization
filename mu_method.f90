@@ -49,7 +49,9 @@ contains
             
             print*,"Error ", error(A, matmul(W,H))**2
         end do
-               
+        stuff = print_matrix(A)  
+        stuff = print_matrix(matmul(W,H))
+         
     end function factoring
     
 end module mu_method

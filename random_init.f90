@@ -29,7 +29,6 @@ contains
         real, Dimension(size(A,1),rank)::W
         real, Dimension(rank,size(A,1)):: H
         
-       
         H = init_matrix(rank,size(A,2))   
     end function init_start_h
     
