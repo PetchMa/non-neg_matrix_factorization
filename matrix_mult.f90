@@ -12,7 +12,7 @@
 ! Created on May 6, 2020, 8:55 AM
 !
 module matrix_mult
-    
+    use dot_product
     implicit none 
     private
     public::multiply
@@ -22,9 +22,27 @@ module matrix_mult
     end interface multiply
 
 contains
-    function multiply(array,array2) result(array)
+    function multiply(array,array2) result(array3)
         real, Dimension(:,:), intent(in)::array, array2
-        
+        real, Dimension(size(array,2),size(array2,1))::array3
+        integer:: rows, cols,n,k
+        real:: prod
+ 
+        rows = size(array,2)
+        cols = size(array2,1)
+        if(size(array,1)/=size(array2,2))then 
+            print *, "Incompatable"
+            print *, "Array 1 row: ", size(array,1),  "Array 2 col: ",size(array2,2)
+            stop
+        else
+           
+            do n=1, rows
+                do k = 1, cols
+                    prod = mult(array(n,:),array2(:,k))
+                    array3(n,k)= prod
+                end do
+            end do
+        end if
         
     end function multiply
     

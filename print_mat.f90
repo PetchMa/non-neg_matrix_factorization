@@ -17,8 +17,7 @@ contains
         integer:: height, width, n,m
         height = size(array,1)
         width =  size(array,2)
-        print *, "This was the init array"
-
+        print *, "This is your Matrix"
         do n = 1,height
             print *, "[",(array(n,m), m =1,width),"]"
         end do
