@@ -35,7 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/init.o \
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/print_mat.o
 
 
 # C Compiler Flags
@@ -62,9 +64,17 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/non_neg_mat_fact.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.f} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/non_neg_mat_fact ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/init.o: init.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -O2 -o ${OBJECTDIR}/init.o init.f90
+
 ${OBJECTDIR}/main.o: main.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -O2 -o ${OBJECTDIR}/main.o main.f90
+
+${OBJECTDIR}/print_mat.o: print_mat.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -O2 -o ${OBJECTDIR}/print_mat.o print_mat.f90
 
 # Subprojects
 .build-subprojects:
