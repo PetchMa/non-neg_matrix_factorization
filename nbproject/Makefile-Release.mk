@@ -35,13 +35,18 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/add_matrix.o \
 	${OBJECTDIR}/distance.o \
 	${OBJECTDIR}/dot_product.o \
 	${OBJECTDIR}/init.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/matrix_mult.o \
+	${OBJECTDIR}/mu_method.o \
+	${OBJECTDIR}/nndsvd_init.o \
 	${OBJECTDIR}/print_mat.o \
-	${OBJECTDIR}/trans.o
+	${OBJECTDIR}/random_init.o \
+	${OBJECTDIR}/trans.o \
+	${OBJECTDIR}/update_h.o
 
 
 # C Compiler Flags
@@ -68,6 +73,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/non_neg_mat_fact.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.f} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/non_neg_mat_fact ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/add_matrix.o: add_matrix.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -O2 -o ${OBJECTDIR}/add_matrix.o add_matrix.f90
+
 ${OBJECTDIR}/distance.o: distance.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -O2 -o ${OBJECTDIR}/distance.o distance.f90
@@ -88,13 +97,29 @@ ${OBJECTDIR}/matrix_mult.o: matrix_mult.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -O2 -o ${OBJECTDIR}/matrix_mult.o matrix_mult.f90
 
+${OBJECTDIR}/mu_method.o: mu_method.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -O2 -o ${OBJECTDIR}/mu_method.o mu_method.f90
+
+${OBJECTDIR}/nndsvd_init.o: nndsvd_init.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -O2 -o ${OBJECTDIR}/nndsvd_init.o nndsvd_init.f90
+
 ${OBJECTDIR}/print_mat.o: print_mat.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -O2 -o ${OBJECTDIR}/print_mat.o print_mat.f90
 
+${OBJECTDIR}/random_init.o: random_init.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -O2 -o ${OBJECTDIR}/random_init.o random_init.f90
+
 ${OBJECTDIR}/trans.o: trans.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -O2 -o ${OBJECTDIR}/trans.o trans.f90
+
+${OBJECTDIR}/update_h.o: update_h.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -O2 -o ${OBJECTDIR}/update_h.o update_h.f90
 
 # Subprojects
 .build-subprojects:

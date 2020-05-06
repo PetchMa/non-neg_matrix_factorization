@@ -12,13 +12,18 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>add_matrix.f90</itemPath>
       <itemPath>distance.f90</itemPath>
       <itemPath>dot_product.f90</itemPath>
       <itemPath>init.f90</itemPath>
       <itemPath>main.f90</itemPath>
       <itemPath>matrix_mult.f90</itemPath>
+      <itemPath>mu_method.f90</itemPath>
+      <itemPath>nndsvd_init.f90</itemPath>
       <itemPath>print_mat.f90</itemPath>
+      <itemPath>random_init.f90</itemPath>
       <itemPath>trans.f90</itemPath>
+      <itemPath>update_h.f90</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -42,6 +47,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="add_matrix.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="distance.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="dot_product.f90" ex="false" tool="2" flavor2="0">
@@ -52,9 +59,17 @@
       </item>
       <item path="matrix_mult.f90" ex="false" tool="2" flavor2="0">
       </item>
+      <item path="mu_method.f90" ex="false" tool="2" flavor2="0">
+      </item>
+      <item path="nndsvd_init.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="print_mat.f90" ex="false" tool="2" flavor2="0">
       </item>
+      <item path="random_init.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="trans.f90" ex="false" tool="2" flavor2="0">
+      </item>
+      <item path="update_h.f90" ex="false" tool="2" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -77,6 +92,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="add_matrix.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="distance.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="dot_product.f90" ex="false" tool="2" flavor2="0">
@@ -87,9 +104,17 @@
       </item>
       <item path="matrix_mult.f90" ex="false" tool="2" flavor2="0">
       </item>
+      <item path="mu_method.f90" ex="false" tool="2" flavor2="0">
+      </item>
+      <item path="nndsvd_init.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="print_mat.f90" ex="false" tool="2" flavor2="0">
       </item>
+      <item path="random_init.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="trans.f90" ex="false" tool="2" flavor2="0">
+      </item>
+      <item path="update_h.f90" ex="false" tool="2" flavor2="0">
       </item>
     </conf>
   </confs>
