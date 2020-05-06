@@ -11,6 +11,7 @@ module update_h
     use matrix_mult
     use trans
     use distance
+    use add_matrix
     
     implicit none 
     private
@@ -21,16 +22,16 @@ module update_h
     end interface h_update
 
 contains
-    function h_update(H, W, A, e)result(H_up)
+    function h_update(H, W, A)result(H_up)
         real, Dimension(:,:), intent(in)::A,H,W
         real, Dimension(size(W,2),size(A,2))::W_TA
         real, Dimension(size(W,2),size(H,2))::W_TWH
         real, Dimension(size(H,1),size(H,2))::H_up
-        real, intent(in), e
+        
         integer::i,j
         
         W_TA = multiply(transpose(W),A)
-        W_TWH = add(multiply(transpose(W),H),e)
+        W_TWH = multiply(transpose(W),H)+1*10**(-6)
         H_up = H
         
         do i = 1, size(H,1)
@@ -39,7 +40,7 @@ contains
             end do
         end do
         
-    end subroutine h_update
+    end function h_update
     
 end module update_h
 

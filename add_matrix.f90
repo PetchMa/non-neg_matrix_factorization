@@ -8,17 +8,18 @@ module add_matrix
     
     implicit none 
     private
-    public::add
+    public::add_mat_and_scal
     
-    interface add
-        procedure add
-    end interface add
+    interface add_mat_and_scal
+        procedure add_mat_and_scal
+    end interface add_mat_and_scal
 
 contains
-    function add(array, scalar) result(array2)
+    function add_mat_and_scal(array, scalar) result(array2)
         real, Dimension(:,:), intent(in)::array
+        real, intent(in)::scalar
         real, Dimension(size(array,1),size(array,2))::array2
-        real::scalar
+        
         integer:: n,m
        
         do n = 1, size(array,1)
@@ -26,7 +27,7 @@ contains
                 array2= array(n,m)+scalar
             end do
         end do
-    end function add
+    end function add_mat_and_scal
     
 end module add_matrix
 

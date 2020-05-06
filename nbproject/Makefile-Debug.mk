@@ -46,7 +46,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/print_mat.o \
 	${OBJECTDIR}/random_init.o \
 	${OBJECTDIR}/trans.o \
-	${OBJECTDIR}/update_h.o
+	${OBJECTDIR}/update_h.o \
+	${OBJECTDIR}/update_w.o
 
 
 # C Compiler Flags
@@ -120,6 +121,10 @@ ${OBJECTDIR}/trans.o: trans.f90
 ${OBJECTDIR}/update_h.o: update_h.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -g -o ${OBJECTDIR}/update_h.o update_h.f90
+
+${OBJECTDIR}/update_w.o: update_w.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -g -o ${OBJECTDIR}/update_w.o update_w.f90
 
 # Subprojects
 .build-subprojects:

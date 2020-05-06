@@ -10,7 +10,9 @@ module mu_method
     use matrix_mult
     use trans
     use distance
-    use add
+    use add_matrix
+    use update_h
+    use update_w
     
     
     implicit none 
@@ -22,17 +24,25 @@ module mu_method
     end interface factoring
 
 contains
-    function factoring(A, rank)result(array1)
+    subroutine factoring(A, rank, max_iter)
+!        Set all the variables 
         real, Dimension(:,:), intent(in)::A
-        integer, intent(in)::rank, stuff
-       
+        integer, intent(in)::rank, max_iter
+                
         real, Dimension(size(A,1),rank)::W
-        real, Dimension(rank, size(A,2))::H     
+        real, Dimension(rank, size(A,2))::H
+        integer n, i, j
+        
+!          
         W,H = init_start(size(A,1),rank)
         
-        
-        
-    end function factoring
+        do n = 1, max_iter
+            H = h_update(H, W, A)
+            W = w_update(W, H, A)
+            print*,"Error ", error(A, multiply(W,H))
+        end do
+               
+    end subroutine factoring
     
 end module mu_method
 
