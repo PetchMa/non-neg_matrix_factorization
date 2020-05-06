@@ -27,16 +27,18 @@ contains
         real, Dimension(size(W,2),size(A,2))::W_TA
         real, Dimension(size(W,2),size(H,2))::W_TWH
         real, Dimension(size(H,1),size(H,2))::H_up
+        integer:: stuff
         
         integer::i,j
        
         
         W_TA = multiply(transpose(W),A)
+        stuff = print_matrix(multiply(transpose(W),A))
         
-        
-        W_TWH = matmul(transpose(W),matmul(W,H))+1*10**(-6)
+        W_TWH = matmul(transpose(W),matmul(W,H))+1*10**(-3)
         H_up = H
-        print*,"updating loop ...."
+        print*,"updating loop ...." 
+        
         do i = 1, size(H,1)
             do j = 1, size(H,2)
                 H_up(i, j) = H_up(i, j) * W_TA(i, j) / W_TWH(i, j)

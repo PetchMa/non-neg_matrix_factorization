@@ -38,13 +38,16 @@ contains
 !          
         W = init_start_w(A,rank)
         H = init_start_h(A,rank)
+        
         print*,"Begin Minimizing Loop!"
         do n = 1, max_iter
             print*,"Updating H ...."
             H = h_update(H, W, A)
             print*,"Updating W ...."
             W = w_update(W, H, A)
-            print*,"Error ", error(A, multiply(W,H))
+            print*,"Done Updates ...."
+            
+            print*,"Error ", error(A, matmul(W,H))
         end do
                
     end function factoring

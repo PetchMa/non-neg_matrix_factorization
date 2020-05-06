@@ -34,7 +34,7 @@ contains
         
         AH_T = matmul(A, transpose(H))
         
-        WHH_T = matmul(matmul(W,H), transpose(H))+1*10**(-6)
+        WHH_T = matmul(matmul(W,H), transpose(H))+1*10**(-3)
         
         W_up = W
         print*,"updating loop ...."
