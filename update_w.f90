@@ -31,19 +31,19 @@ contains
         real, Dimension(size(W,1),size(W,2))::W_up
         
         integer::i,j
-        print*,"Calculating AH_T ...."
-        AH_T = multiply(A, transpose(H))
-        print*,"Calculating WHH_T ...."
-        WHH_T = multiply(multiply(transpose(W),H), transpose(H))+1*10**(-6)
+        
+        AH_T = matmul(A, transpose(H))
+        
+        WHH_T = matmul(matmul(W,H), transpose(H))+1*10**(-6)
         
         W_up = W
-        
+        print*,"updating loop ...."
         do i = 1, size(H,1)
             do j = 1, size(H,2)
                 W_up(i, j) = W_up(i, j) * AH_T(i, j) / WHH_T(i, j)
             end do
         end do
-        
+        print*,"End loop ...."
     end function w_update
     
 end module update_w

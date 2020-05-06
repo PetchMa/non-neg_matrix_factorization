@@ -24,7 +24,7 @@ module matrix_mult
 contains
     function multiply(array,array2) result(array3)
         real, Dimension(:,:), intent(in)::array, array2
-        real, Dimension(size(array,2),size(array2,1))::array3
+        real, Dimension(size(array,1),size(array2,2))::array3
         integer:: rows, cols,n,k
         real:: prod
  
@@ -32,7 +32,7 @@ contains
         cols = size(array2,1)
         if(size(array,2)/=size(array2,1))then 
             print *, "Incompatable - MATRIX Multiplication"
-            print *, "Array 1 row: ", size(array,2),  "Array 2 col: ",size(array2,1)
+            print *, "Array 1 row: ", size(array,2),  "Array 2 col: ",size(array2,2)
             stop
         else
             do n=1, rows
