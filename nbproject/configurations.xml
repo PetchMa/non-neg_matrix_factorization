@@ -12,8 +12,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>dot_product.f90</itemPath>
       <itemPath>init.f90</itemPath>
       <itemPath>main.f90</itemPath>
+      <itemPath>matrix_mult.f90</itemPath>
       <itemPath>print_mat.f90</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -38,9 +40,13 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="dot_product.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="init.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="main.f90" ex="false" tool="2" flavor2="0">
+      </item>
+      <item path="matrix_mult.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="print_mat.f90" ex="false" tool="2" flavor2="0">
       </item>
@@ -65,9 +71,13 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="dot_product.f90" ex="false" tool="2" flavor2="0">
+      </item>
       <item path="init.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="main.f90" ex="false" tool="2" flavor2="0">
+      </item>
+      <item path="matrix_mult.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="print_mat.f90" ex="false" tool="2" flavor2="0">
       </item>

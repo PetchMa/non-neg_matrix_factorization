@@ -5,6 +5,7 @@
 ! Created on May 6, 2020, 8:55 AM
 !
 module init
+    
     implicit none 
     private
     public::init_matrix
@@ -23,10 +24,6 @@ module init
             do m = 1,width
                 array(n,m)= rand()
             end do
-        end do
-        print *, "This was the init array"
-        do n = 1,height
-            print *, "[",(array(n,m), m =1,width),"]"
         end do
         
     end function init_matrix

@@ -35,8 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/dot_product.o \
 	${OBJECTDIR}/init.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/matrix_mult.o \
 	${OBJECTDIR}/print_mat.o
 
 
@@ -64,6 +66,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/non_neg_mat_fact.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.f} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/non_neg_mat_fact ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/dot_product.o: dot_product.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -g -o ${OBJECTDIR}/dot_product.o dot_product.f90
+
 ${OBJECTDIR}/init.o: init.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -g -o ${OBJECTDIR}/init.o init.f90
@@ -71,6 +77,10 @@ ${OBJECTDIR}/init.o: init.f90
 ${OBJECTDIR}/main.o: main.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -g -o ${OBJECTDIR}/main.o main.f90
+
+${OBJECTDIR}/matrix_mult.o: matrix_mult.f90
+	${MKDIR} -p ${OBJECTDIR}
+	$(COMPILE.f) -g -o ${OBJECTDIR}/matrix_mult.o matrix_mult.f90
 
 ${OBJECTDIR}/print_mat.o: print_mat.f90
 	${MKDIR} -p ${OBJECTDIR}
