@@ -41,13 +41,13 @@ contains
         
         print*,"Begin Minimizing Loop!"
         do n = 1, max_iter
-            print*,"Updating H ...."
+            print*,"Updates -",n
             H = h_update(H, W, A)
-            print*,"Updating W ...."
+      
             W = w_update(W, H, A)
-            print*,"Done Updates ...."
             
-            print*,"Error ", error(A, matmul(W,H))
+            
+            print*,"Error ", error(A, matmul(W,H))**2
         end do
                
     end function factoring

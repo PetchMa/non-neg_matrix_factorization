@@ -15,7 +15,7 @@ program main
     implicit none
     integer :: x_1 = 5, y_1=5, stuff
     integer :: rank =10
-    integer :: max_iter =3
+    integer :: max_iter =200
     real, Dimension(:,:), Allocatable :: A, W, H
     Allocate(A(x_1,y_1))
     Allocate(W(x_1,rank))

@@ -32,18 +32,18 @@ contains
         
         integer::i,j
         
-        AH_T = matmul(A, transpose(H))
+        AH_T = matmul(A, TRANSPOSE(H))
         
-        WHH_T = matmul(matmul(W,H), transpose(H))+1*10**(-3)
+        WHH_T = matmul(matmul(W,H), TRANSPOSE(H))+0.0000000001
         
         W_up = W
-        print*,"updating loop ...."
+        
         do i = 1, size(H,1)
             do j = 1, size(H,2)
                 W_up(i, j) = W_up(i, j) * AH_T(i, j) / WHH_T(i, j)
             end do
         end do
-        print*,"End loop ...."
+       
     end function w_update
     
 end module update_w

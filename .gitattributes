@@ -1,1 +1,1 @@
-*.mk linguist-detectable=true
+*.mk linguist-detectable=false

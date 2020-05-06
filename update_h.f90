@@ -32,19 +32,19 @@ contains
         integer::i,j
        
         
-        W_TA = multiply(transpose(W),A)
-        stuff = print_matrix(multiply(transpose(W),A))
+        W_TA = matmul(transpose(W),A)
+ 
+        W_TWH = matmul(matmul(transpose(W),W), H)+0.0000000001
         
-        W_TWH = matmul(transpose(W),matmul(W,H))+1*10**(-3)
         H_up = H
-        print*,"updating loop ...." 
-        
+       
         do i = 1, size(H,1)
             do j = 1, size(H,2)
+                
                 H_up(i, j) = H_up(i, j) * W_TA(i, j) / W_TWH(i, j)
             end do
         end do
-        print*,"End loop ...."
+       
     end function h_update
     
 end module update_h
