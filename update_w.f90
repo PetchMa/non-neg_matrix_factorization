@@ -31,8 +31,9 @@ contains
         real, Dimension(size(W,1),size(W,2))::W_up
         
         integer::i,j
-        
+        print*,"Calculating AH_T ...."
         AH_T = multiply(A, transpose(H))
+        print*,"Calculating WHH_T ...."
         WHH_T = multiply(multiply(transpose(W),H), transpose(H))+1*10**(-6)
         
         W_up = W

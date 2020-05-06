@@ -5,7 +5,7 @@
 ! Created on May 6, 2020, 12:49 PM
 !
 module mu_method
-    use init
+    use random_init
     use print_mat
     use matrix_mult
     use trans
@@ -24,25 +24,30 @@ module mu_method
     end interface factoring
 
 contains
-    subroutine factoring(A, rank, max_iter)
+
+    function factoring(A, rank, max_iter)result(stuff)
 !        Set all the variables 
         real, Dimension(:,:), intent(in)::A
         integer, intent(in)::rank, max_iter
                 
         real, Dimension(size(A,1),rank)::W
         real, Dimension(rank, size(A,2))::H
-        integer n, i, j
-        
+        integer :: n, i, j
+        integer:: stuff
+        stuff=1
 !          
-        W,H = init_start(size(A,1),rank)
-        
+        W = init_start_w(A,rank)
+        H = init_start_h(A,rank)
+        print*,"Begin Minimizing Loop!"
         do n = 1, max_iter
+            print*,"Updating H ...."
             H = h_update(H, W, A)
+            print*,"Updating W ...."
             W = w_update(W, H, A)
             print*,"Error ", error(A, multiply(W,H))
         end do
                
-    end subroutine factoring
+    end function factoring
     
 end module mu_method
 

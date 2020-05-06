@@ -22,7 +22,7 @@ contains
         real :: sum 
         sum=0
         if(size(array,1)/=size(array2,1))then
-            print*,"incompatable"
+            print*,"incompatable - Dot Product"
             stop
         else
             x = size(array,1)

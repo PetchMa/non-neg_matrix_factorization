@@ -19,7 +19,6 @@
       <itemPath>main.f90</itemPath>
       <itemPath>matrix_mult.f90</itemPath>
       <itemPath>mu_method.f90</itemPath>
-      <itemPath>nndsvd_init.f90</itemPath>
       <itemPath>print_mat.f90</itemPath>
       <itemPath>random_init.f90</itemPath>
       <itemPath>trans.f90</itemPath>
@@ -61,8 +60,6 @@
       <item path="matrix_mult.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="mu_method.f90" ex="false" tool="2" flavor2="0">
-      </item>
-      <item path="nndsvd_init.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="print_mat.f90" ex="false" tool="2" flavor2="0">
       </item>
@@ -108,8 +105,6 @@
       <item path="matrix_mult.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="mu_method.f90" ex="false" tool="2" flavor2="0">
-      </item>
-      <item path="nndsvd_init.f90" ex="false" tool="2" flavor2="0">
       </item>
       <item path="print_mat.f90" ex="false" tool="2" flavor2="0">
       </item>

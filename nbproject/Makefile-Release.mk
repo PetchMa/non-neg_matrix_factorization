@@ -42,7 +42,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/matrix_mult.o \
 	${OBJECTDIR}/mu_method.o \
-	${OBJECTDIR}/nndsvd_init.o \
 	${OBJECTDIR}/print_mat.o \
 	${OBJECTDIR}/random_init.o \
 	${OBJECTDIR}/trans.o \
@@ -101,10 +100,6 @@ ${OBJECTDIR}/matrix_mult.o: matrix_mult.f90
 ${OBJECTDIR}/mu_method.o: mu_method.f90
 	${MKDIR} -p ${OBJECTDIR}
 	$(COMPILE.f) -O2 -o ${OBJECTDIR}/mu_method.o mu_method.f90
-
-${OBJECTDIR}/nndsvd_init.o: nndsvd_init.f90
-	${MKDIR} -p ${OBJECTDIR}
-	$(COMPILE.f) -O2 -o ${OBJECTDIR}/nndsvd_init.o nndsvd_init.f90
 
 ${OBJECTDIR}/print_mat.o: print_mat.f90
 	${MKDIR} -p ${OBJECTDIR}

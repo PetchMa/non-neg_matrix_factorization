@@ -8,22 +8,30 @@ module random_init
     use init
     implicit none 
     private
-    public::init_start
+    public::init_start_w, init_start_h
     
-    interface init_start
-        procedure init_start
-    end interface init_start
+   
 
 contains
-    subroutine init_start(A, rank)
+    function init_start_w(A, rank)result(W)
         real, Dimension(:,:), intent(in)::A
         integer, intent(in)::rank
-        real, Dimension(size(A,1),rank)::array1
-        real, Dimension(rank,size(A,1)):: array2
+        real, Dimension(size(A,1),rank)::W
+        real, Dimension(rank,size(A,1)):: H
         
-        array1 = init_matrix(size(A,1),rank)
-        array2 = init_matrix(rank,size(A,1))   
-    end subroutine init_start
+        W = init_matrix(size(A,1),rank)
+
+    end function init_start_w
+    
+    function init_start_h(A, rank)result(H)
+        real, Dimension(:,:), intent(in)::A
+        integer, intent(in)::rank
+        real, Dimension(size(A,1),rank)::W
+        real, Dimension(rank,size(A,1)):: H
+        
+       
+        H = init_matrix(rank,size(A,2))   
+    end function init_start_h
     
 end module random_init
 

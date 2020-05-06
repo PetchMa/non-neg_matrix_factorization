@@ -30,9 +30,9 @@ contains
  
         rows = size(array,2)
         cols = size(array2,1)
-        if(size(array,1)/=size(array2,2))then 
-            print *, "Incompatable"
-            print *, "Array 1 row: ", size(array,1),  "Array 2 col: ",size(array2,2)
+        if(size(array,2)/=size(array2,1))then 
+            print *, "Incompatable - MATRIX Multiplication"
+            print *, "Array 1 row: ", size(array,2),  "Array 2 col: ",size(array2,1)
             stop
         else
             do n=1, rows

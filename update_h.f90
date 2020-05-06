@@ -29,9 +29,14 @@ contains
         real, Dimension(size(H,1),size(H,2))::H_up
         
         integer::i,j
+        print*,"Calculating W_TA ...."
         
         W_TA = multiply(transpose(W),A)
-        W_TWH = multiply(transpose(W),H)+1*10**(-6)
+        
+        print*,"Calculating W_TWH ...."
+        print*," W shape ....", size(W,1), "  - ", size(W,2)
+        print*," H shape ....", size(H,1), "  - ", size(H,2)
+        W_TWH = multiply(transpose(W),multiply(W,H))+1*10**(-6)
         H_up = H
         
         do i = 1, size(H,1)

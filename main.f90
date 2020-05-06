@@ -10,29 +10,23 @@ program main
     use matrix_mult
     use trans
     use distance
+    use mu_method
     
     implicit none
-    integer :: x_1 = 2, y_1=3, x_2 =3, y_2=2, stuff=1
-    real, Dimension(:,:), Allocatable :: array, array2, array3, array4
+    integer :: x_1 = 5, y_1=5, stuff
+    integer :: rank =10
+    integer :: max_iter =10
+    real, Dimension(:,:), Allocatable :: A, W, H
+    Allocate(A(x_1,y_1))
+    Allocate(W(x_1,rank))
+    Allocate(H(rank, y_1))
+       
+    A = init_matrix(x_1,y_1)
+    print*,"Matrix A =>>"
+    stuff = print_matrix(A)
     
-    Allocate(array(x_1,y_1))
-    Allocate(array2(x_2,y_2))
-    Allocate(array3(x_1,y_2))
+    stuff= factoring(A,rank, max_iter)
     
-    array = init_matrix(x_1,y_1)
-    stuff = print_matrix(array)
-    print *,""
-    print *,"size(a,1)", size(array,1)
-    print *,"size(a,2)",size(array,2)
-
-    
-    array2 = init_matrix(x_2,y_2)
-    stuff = print_matrix(array2)
-    print *,""
-!    print *," Result of Matrix Multiplication"
-!    array3 = multiply(array,array2)
-!    stuff = print_matrix(array3)
-    print *," error between ", error(array,array)
     
     
 end program main
