@@ -6,3 +6,5 @@ The reason it was implemented in Fortran was to practice and using a lower level
 Below is a quick animation of one of my tests with a picture of the milky way. Notice the second image getting recreated to clear and clear clarity. This is done through multiplicative gradient approach to training the matrices of W and H to converge on creating the original product. 
  
 ![alt text](https://github.com/PetchMa/non-neg_matrix_factorization/blob/master/assets/galaxy.gif)
+
+The decomposed matrices will serve as the features of the original matrix. The key is that by shortening the rank value we can compress the representation of the data by varying degrees. K rank will determine the factor of compression. Factor of WH/(WK+HK) compression!
